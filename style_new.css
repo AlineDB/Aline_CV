@@ -127,7 +127,6 @@ img{
     right: 100px;
     cursor: pointer;
     z-index: 1;
-    transform: rotate(180deg);
 }
 
 .cVisible{
@@ -143,6 +142,8 @@ img{
 .menu input{
     border: none;
 }
+
+
 nav li:last-child{
     border: 1px solid lightgrey;
     padding: 0.5em 0.5em;
@@ -376,12 +377,14 @@ form label::after, form select::after, form textarea::after{
     content: ' *';
 }
 
+
 input:invalid {
-   // box-shadow: 0 0 5px 1px red;
+   border-color: #d79f9f;
 }
 
-input:focus:invalid {
-    outline: none;
+input:focus {
+    box-shadow: 0 0 0 1px #7451eb;
+    border-color: #7451eb;
 }
 
 
