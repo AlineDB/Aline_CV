@@ -12,7 +12,9 @@ zone.addEventListener('mousemove', (e) =>{
 })
 
 
-/*boutons*/
+/*burger menu*/
+
+
 
 
 /*formulaire*/
@@ -47,3 +49,31 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("FixedNav").className = (window.pageYOffset > 100) ? "cVisible" : "cInvisible";
     };
 });
+
+
+//apparaitre au scroll
+
+const resume = document.getElementsByClassName("Resume");
+console.log(resume);
+
+const ratio = .4;
+const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: ratio   //50% de l'élément visible il déclenche
+}
+const handleInterset = function (entries, observer) {
+        entries.forEach(function (entry){ /*boucle sur les entry*/
+           if(entry.intersectionRatio > ratio){ /*si entry a un ratio plus grand que le ratio défini*/
+               entry.target.classList.add('reveal-visible');
+               observer.unobserve(entry.target); /*arrete d'observer l'élément actuel*/
+           } else {
+
+           }
+    })
+}
+const observer = new IntersectionObserver(handleInterset, options);
+document.querySelectorAll('.reveal').forEach(function (r){
+    observer.observe(r); /*boucle sur les élément et observe ceux ci un à un*/
+});
+

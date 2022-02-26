@@ -25,21 +25,27 @@
       </h1>
       <div id="FixedNav" class="cInvisible">
         <a  href="#">
-          <img  src="./img/arrow_up.svg" alt="flèche retour en haut" width="80" height="80"/>
+          <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="#7451eb" class="arrow-up" viewBox="0 0 20 20">
+            <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+          </svg>
         </a>
       </div>
-      <nav>
-        <ul>
-          <li>
-            <a title="Site Openclassrooms" href="https://openclassrooms.com/fr/">Openclassrooms</a>
+      <nav class="navbar" role="navigation">
+        <ul class="navbar__links">
+          <li class="navbar__links">
+            <a title="Site Openclassrooms" href="https://openclassrooms.com/fr/"><img src="./img/openclassrooms.png" alt="logo openclassrooms" /></a>
           </li>
-          <li>
-            <a href="#">Formations</a>
+          <li class="navbar__links">
+            <a href="#">Formations
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+              </svg>
+            </a>
           </li>
-          <li>
+          <li class="navbar__links">
             <a href="#">Aides à l'emploi</a>
           </li>
-          <li>
+          <li class="navbar__links">
             <a href="#">Archives</a>
           </li>
           <li>
@@ -49,12 +55,15 @@
             <input type="image" id="search-image" alt="Cherchez"
                    src="./img/magnifying-glass.svg" width="23" height="23">
           </li>
-          <li>
+          <li class="navbar__links">
             <label for="user">AB</label>
             <input type="image" id="user" alt="Connexion"
                    src="./img/back.svg" width="15" height="15">
           </li>
         </ul>
+        <button class="burger">
+          <span></span>
+        </button>
       </nav>
     </header>
     <section class="EnTete">
@@ -74,7 +83,7 @@
       </p>
       <button id="decouvrir" type="button" name="button">Découvrir</button>
     </section>
-    <section class="Resume">
+    <section class="Resume reveal">
       <div>
         <img src="./img/Certification-amico.svg" width="368" height="240" alt="Illustration diplômes">
         <h3 aria-level="3" role="heading">
@@ -109,18 +118,18 @@
         </p>
       </div>
     </section>
-    <section class="Competences">
+    <section class="Competences reveal">
       <h2 aria-level="2" role="heading">
         Des compétences utiles
       </h2>
       <p>
         Répondre au téléphone, mailing, organisation d'événements divers, animation de réunions, ordre du jour, PV, réalisation d'affiches et flyers, cogestion d'une page Facebook politique et du site internet,
       </p>
-      <video controls  width="540" height="300">
+      <video controls  width="540" height="300" poster="img/logo.svg">
         <source src="./img/video_cv.mp4" type="video/mp4">
       </video>
     </section>
-    <section class="SavoirPlus">
+    <section class="SavoirPlus reveal">
       <h3 aria-level="3" role="heading">
         En savoir plus sur Aline
       </h3>
@@ -196,7 +205,7 @@
         <input class="carroussel" type="button" value=""><input  class="carroussel" type="button" value=""><input class="carroussel" type="button" value="">
       </div>
     </section>
-    <section class="Contact">
+    <section class="Contact reveal">
       <img src="img/MoiTel.png" width="250" height="200">
       <h3 aria-level="3" role="heading">
         Contactez-moi !
@@ -205,19 +214,20 @@
         Je suis disponible et à l'écoute de toutes propositions ou simplement pour vous renseigner
       </p>
       <ol>
+
         <li id="clickContact" itemscope itemtype="https://schema.org/Person">
-          <img src="./img/envelope.svg"  width="18" height="18">
+          <img src="./img/email.png"  width="30" height="30">
           Me contacter
         </li>
         <li>
           <a itemprop="telephone" href="tel:+32487112233">
-            <img  src="./img/smartphone-6.svg"  width="18" height="18">
+            <img  src="./img/viber.png"  width="30" height="30">
             0487 11 22 33
           </a>
         </li>
       </ol>
       <div  class="cacher">
-        <form method="get">
+        <form method="get" action="">
           <fieldset class="form_row_1">
             <label for="name">Nom :</label>
             <input type="text" id="name" name="user_name" required>
@@ -263,7 +273,7 @@
               4420 Saint-Nicolas
             </li>
             <li>
-              <img  src="./img/smartphone-6.svg"  width="18" height="18">
+              <img  src="./img/viber.png"  width="18" height="18">
               <a itemprop="telephone" href="tel:+32487112233">
                 0487 11 22 33
               </a>
@@ -284,25 +294,41 @@
             </a>
           </li>
           <li>
+            <a title="Lien vers le CV d'Aline" href="./img/DE%20BARROS%20A.cv.pdf">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filetype-pdf" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2h-1v-1h1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM1.6 11.85H0v3.999h.791v-1.342h.803c.287 0 .531-.057.732-.173.203-.117.358-.275.463-.474a1.42 1.42 0 0 0 .161-.677c0-.25-.053-.476-.158-.677a1.176 1.176 0 0 0-.46-.477c-.2-.12-.443-.179-.732-.179Zm.545 1.333a.795.795 0 0 1-.085.38.574.574 0 0 1-.238.241.794.794 0 0 1-.375.082H.788V12.48h.66c.218 0 .389.06.512.181.123.122.185.296.185.522Zm1.217-1.333v3.999h1.46c.401 0 .734-.08.998-.237a1.45 1.45 0 0 0 .595-.689c.13-.3.196-.662.196-1.084 0-.42-.065-.778-.196-1.075a1.426 1.426 0 0 0-.589-.68c-.264-.156-.599-.234-1.005-.234H3.362Zm.791.645h.563c.248 0 .45.05.609.152a.89.89 0 0 1 .354.454c.079.201.118.452.118.753a2.3 2.3 0 0 1-.068.592 1.14 1.14 0 0 1-.196.422.8.8 0 0 1-.334.252 1.298 1.298 0 0 1-.483.082h-.563v-2.707Zm3.743 1.763v1.591h-.79V11.85h2.548v.653H7.896v1.117h1.606v.638H7.896Z"/>
+              </svg>
+              Mon CV
+            </a>
+          </li>
+          <li>
             Cette page est créée dans le cadre du cours de Design Web, <br>basée sur le site <a title="Site Openclassrooms" href="https://openclassrooms.com/fr/">Openclassrooms.</a>
           </li>
         </ol>
       </div>
       <div class="Reseaux">
         <a title="Profil Facebook d'Aline" href="https://www.facebook.com/aline.lovec">
-          <img src="./img/facebook.svg" alt="Profil Facebook d'Aline" >
+          <svg class="facebook" viewBox="0 0 7 18">
+            <path d="M4.563 4.964h2.295l-0.268 2.536h-2.027v7.357h-3.045v-7.357h-1.518v-2.536h1.518v-1.527q0-1.625 0.768-2.46t2.527-0.835h2.027v2.536h-1.268q-0.348 0-0.558 0.058t-0.304 0.21-0.121 0.308-0.027 0.442v1.268z"></path>
+          </svg>
         </a>
         <a title="Profil Pinterest d'Aline" href="https://pin.it/4UB1IH0">
-          <img src="./img/pinterest.svg" alt="Profil Pinterest d'Aline" >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="pinterest" viewBox="0 0 16 16">
+            <path d="M8 0a8 8 0 0 0-2.915 15.452c-.07-.633-.134-1.606.027-2.297.146-.625.938-3.977.938-3.977s-.239-.479-.239-1.187c0-1.113.645-1.943 1.448-1.943.682 0 1.012.512 1.012 1.127 0 .686-.437 1.712-.663 2.663-.188.796.4 1.446 1.185 1.446 1.422 0 2.515-1.5 2.515-3.664 0-1.915-1.377-3.254-3.342-3.254-2.276 0-3.612 1.707-3.612 3.471 0 .688.265 1.425.595 1.826a.24.24 0 0 1 .056.23c-.061.252-.196.796-.222.907-.035.146-.116.177-.268.107-1-.465-1.624-1.926-1.624-3.1 0-2.523 1.834-4.84 5.286-4.84 2.775 0 4.932 1.977 4.932 4.62 0 2.757-1.739 4.976-4.151 4.976-.811 0-1.573-.421-1.834-.919l-.498 1.902c-.181.695-.669 1.566-.995 2.097A8 8 0 1 0 8 0z"/>
+          </svg>
         </a>
         <a title="Profil LinkedIn d'Aline" href="https://www.linkedin.com/in/aline-de-barros-218902166/">
-          <img src="./img/linkedin.svg" alt="Profil LinkedIn d'Aline" >
+          <svg class="linkendin" viewBox="0 0 12 18">
+            <path d="M3.116 5.58v8.848h-2.946v-8.848h2.946zM3.304 2.848q0.009 0.652-0.451 1.089t-1.21 0.438h-0.018q-0.732 0-1.179-0.438t-0.446-1.089q0-0.661 0.46-1.094t1.201-0.433 1.188 0.433 0.455 1.094zM13.714 9.357v5.071h-2.938v-4.732q0-0.938-0.362-1.469t-1.129-0.531q-0.563 0-0.942 0.308t-0.567 0.763q-0.098 0.268-0.098 0.723v4.938h-2.938q0.018-3.563 0.018-5.777t-0.009-2.643l-0.009-0.429h2.938v1.286h-0.018q0.179-0.286 0.366-0.5t0.504-0.464 0.777-0.388 1.022-0.138q1.527 0 2.455 1.013t0.929 2.969z"></path>
+          </svg>
         </a>
         <a title="Profil auteure Kindle d'Aline" href="https://www.amazon.fr/Aline-DB/e/B099XB41FT?ref_=dbs_p_ebk_r00_abau_000000">
-          <img src="./img/ebook.svg" alt="Profil auteure Kindle d'Aline" >
+          <img class="kindle" src="./img/ebook.svg"  width="50" height="50" alt="logo liseuse">
         </a>
         <a title="Profil GitHub d'Aline" href="https://github.com/AlineDB">
-          <img src="./img/github.svg" alt="Profil GitHub d'Aline" >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="github" viewBox="0 0 16 16">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+          </svg>
         </a>
       </div>
       <script type="text/javascript" src="main.js"></script>

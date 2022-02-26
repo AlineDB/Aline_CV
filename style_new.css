@@ -52,6 +52,11 @@ table {
     url("/polices/Montserrat-Regular.otf") format("otf"),
     url("/polices/Oswald-Regular.ttf") format("ttf");
 }
+
+body > *{
+    margin-left: 5%;
+}
+
 body{
     font-family: "Montserrat", sans-serif;
     -webkit-hyphens: auto;
@@ -70,13 +75,17 @@ p, li{
     width: 0;
     height: 0;
 }
+
 a{
     text-decoration: none;
     color: #000000EB;
+    border-bottom: 1px dotted #7451eb;
 }
 
 a:hover{
-    color: #00adef;
+    color: #7451eb;
+    padding-bottom: 0.2em;
+    border-bottom: 1px dotted #7451eb;
 }
 
 nav{
@@ -95,6 +104,7 @@ h2{
     font-size: 3.125em; /*(50/16)*/
     background-color:#163963;
     color: #FFFFFF;
+    margin-left: 5%;
 }
 h3{
     font-family: "Montserrat", sans-serif;
@@ -102,12 +112,14 @@ h3{
     font-size: 1.25em;
     color: #003668;
     line-height: 1.875rem;
+    margin-left: 5%;
 }
 h4{
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
     font-size: 1.125em; /*(18/16)*/
     color: #7451eb;
+    margin-left: 5%;
 }
 input, select, textarea{
     border: 0;
@@ -115,6 +127,7 @@ input, select, textarea{
 }
 button{
     cursor       : pointer;
+    margin-left: 30%;
 }
 img{
     max-width: 100%;
@@ -128,11 +141,6 @@ img{
     border: none;
 }
 
-nav li:first-of-type{
-    color: #7451eb;
-    text-transform: uppercase;
-    font-size: 1.5rem;
-}
 
 nav li:last-child{
     border: 1px solid lightgrey;
@@ -154,6 +162,9 @@ nav li:last-child label{
 
 nav li:last-child input{
     transform: rotate(270deg);
+}
+.burger{
+    display: none;
 }
 
 /*En tete*/
@@ -316,6 +327,10 @@ nav li:last-child input{
     border-radius: 50px;
 }
 
+.carousel-items > ul {
+    touch-action: pan-x;
+}
+
 
 .input{
     justify-content: center;
@@ -333,6 +348,22 @@ nav li:last-child input{
     color: #7451eb;
     font-weight: bold;
     text-transform: uppercase;
+    vertical-align: bottom;
+    line-height: 2rem;
+}
+
+.Contact a{
+    color: #7451eb;
+}
+
+.Contact li+li{
+    border-left: 1px solid #7451eb;
+    padding-left: 2em;
+
+}
+
+.Contact li+li:hover{
+    background-color: RGBA(89,82,158,0.19);
 }
 
 form{
@@ -391,16 +422,18 @@ input:focus {
 footer{
     margin: 1.5em 0;
     border-top: black 1px solid;
+
 }
 footer h4, footer ol{
     margin-top: 1em;
+    line-height: 1.5em;
 }
 
 footer h4, footer div{
     margin-bottom: 0.5em;
 }
 
-.Reseaux img{
+.Reseaux svg, .Reseaux img{
     margin: 1em;
     border: 1px solid black;
     -webkit-border-radius: 50px;
@@ -410,21 +443,53 @@ footer h4, footer div{
     width: 35px;
     height: 35px;
 }
+.facebook:hover{
+    fill: white;
+    background-color: #00adef;
+}
+.linkendin:hover{
+    fill: white;
+    background-color: #1c4ed5;
+}
+.pinterest:hover{
+    fill: white;
+    background-color: #FF0000;
+}
 
-.Reseaux img:hover{
+.github:hover{
+    fill: white;
+    background-color: #003668;
+}
+
+.kindle:hover{
+    background-color: #F6EF59;
+}
+
+.Reseaux a{
+    border: none;
+}
+
+.Reseaux svg:hover, .Reseaux img:hover{
     border: 1px solid #00adef;
 }
 
-/*Ecran de 400px à 1199px*/
+
+/*Sous 600px*/
+@media screen and (max-width: 599px){
+    body > *{
+        margin-left: 0.5em;
+    }
+}
+
+/*Ecran de 600px à 1199px*/
 @media (min-width: 600px) {
     nav ul, .search{
         display: flex;
         justify-content: space-between;
-        margin: 0.5rem 0;
+
     }
     nav ul li,.search{
         flex-direction: column;
-
     }
     .carousel-items {
         max-width: 28.125em; /*450/16*/
@@ -480,7 +545,7 @@ footer h4, footer div{
     form{
         display: grid;
         grid-template-columns: 50% 50%;
-        margin-left: 20%;
+        margin-left: 22%;
         grid-gap: 1em;
     }
 
@@ -500,13 +565,16 @@ footer h4, footer div{
 }
 
 
+
 /*Ecran au dessus de 1200px*/
+
 @media (min-width: 1200px){
     /*grille de base*/
     body{
         display: grid;
         grid-template-columns: 3fr;
     }
+
     nav ul, .search{
         display: flex;
         justify-content: space-between;
@@ -599,7 +667,7 @@ footer h4, footer div{
 }
 
 /*ancre haut de page*/
-#FixedNav
+div[id="FixedNav"]
 {
     position:fixed;
     bottom: 80px;
@@ -608,10 +676,28 @@ footer h4, footer div{
     z-index: 1;
 }
 
+div[id="FixedNav"] a{
+    border-bottom: none;
+}
+
 .cVisible{
     visibility: visible;
+    transition: 5s;
 }
 
 .cInvisible{
     visibility: hidden;
+}
+
+
+/*apparition au scroll*/
+.reveal{
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.reveal-visible{
+    opacity: 1;
+    transform: translateY(0);
+    transition: 1s cubic-bezier(.5, 0, 0, 1);
 }
