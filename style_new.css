@@ -91,6 +91,7 @@ a:hover{
 nav{
     font-family: "Montserrat", sans-serif;
     font-size: 1rem;
+    padding-top: 0.5rem;
 }
 
 nav ul{
@@ -163,14 +164,90 @@ nav li:last-child label{
 nav li:last-child input{
     transform: rotate(270deg);
 }
-.burger{
-    display: none;
+
+@media screen and (max-width: 759px){
+
+    nav li {
+        padding-top: 1.5em;
+    }
+
+    /*burger menu*/
+    .burger{
+        border: none;
+        height: 30px;
+        width: 30px;
+        position: relative;
+        cursor: pointer;
+        background-color: white;
+        float: left;
+        margin-left: 15%;
+    }
+
+    .burger span{
+        height: 3px;
+        background-color: #7451eb;
+        width: 100%;
+        position: absolute;
+        top: 20px;
+        left: 0;
+    }
+
+    .burger span:before{
+        content:'';
+        height: 3px;
+        background-color: #7451eb;
+        width: 100%;
+        position: absolute;
+        top: -10px;
+        left: 0;
+    }
+    .burger span:after{
+        content:'';
+        height: 3px;
+        background-color: #7451eb;
+        width: 100%;
+        position: absolute;
+        top: 10px;
+        left: 0;
+    }
+
+
+    .topnav{
+        margin-left: -300px;
+        transition-duration: 0.2s;
+        position: absolute;
+        min-height: 100vh;
+    }
+
+    .topnav__open{
+        margin-left: 0;
+        transition-duration: 0.3s;
+        background-color: #FBFCFC;
+        margin-top: 50px;
+        width: 200px;
+        position: absolute;
+        padding: 2em;
+    }
+    .topnav input[id=search-image]{
+        margin-left: -120px;
+        margin-bottom: 15px;
+    }
 }
+
+
 
 /*En tete*/
 .EnTete{
     background-color: #7451eb;
     margin: 1.5em 0;
+
+}
+.EnTete div{
+    background-color: white;
+    opacity: 50%;
+    position: absolute;
+    width: 20px;
+    height: 20px;
 }
 .EnTete h2{
     padding: 0.2em 0em 0.2em 0.5em;
@@ -356,10 +433,10 @@ nav li:last-child input{
     color: #7451eb;
 }
 
-.Contact li+li{
+.Contact li:nth-child(2){
     border-left: 1px solid #7451eb;
-    padding-left: 2em;
-
+    vertical-align: center;
+    height: 2rem;
 }
 
 .Contact li+li:hover{
@@ -474,15 +551,12 @@ footer h4, footer div{
 }
 
 
-/*Sous 600px*/
-@media screen and (max-width: 599px){
+
+/*Ecran de - de 760px */
+@media (min-width: 759px) {
     body > *{
         margin-left: 0.5em;
     }
-}
-
-/*Ecran de 600px à 1199px*/
-@media (min-width: 600px) {
     nav ul, .search{
         display: flex;
         justify-content: space-between;
@@ -491,6 +565,7 @@ footer h4, footer div{
     nav ul li,.search{
         flex-direction: column;
     }
+
     .carousel-items {
         max-width: 28.125em; /*450/16*/
         display: flex;
@@ -568,11 +643,18 @@ footer h4, footer div{
 
 /*Ecran au dessus de 1200px*/
 
-@media (min-width: 1200px){
+@media (min-width: 760px){
     /*grille de base*/
     body{
         display: grid;
         grid-template-columns: 3fr;
+    }
+    .burger{
+        display: none;
+    }
+
+    .topnav{
+        position: initial;
     }
 
     nav ul, .search{

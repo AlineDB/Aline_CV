@@ -1,20 +1,31 @@
 
 
-
 /*dégradé entete souris*/
+
 let x;
 let y;
 let zone = document.querySelector('.EnTete');
+let degrade = zone.querySelector('div');
 zone.addEventListener('mousemove', (e) =>{
-    zone.x = e.clientX;
-    zone.y = e.clientY;
-    
+    zone.x = e.pageX/2;
+    zone.y = e.pageY/2;
+    zone.style.backgroundColor = "rgb(00," + zone.x + "," + zone.y + ")";
 })
+
+zone.addEventListener('mouseleave', (e) => {
+    zone.style.backgroundColor = "#7451eb";
+})
+
 
 
 /*burger menu*/
 
+let button = document.querySelector('.burger');
+let nav = document.querySelector('.topnav');
 
+button.addEventListener('click', (e) => {
+    nav.classList.toggle('topnav__open');
+})
 
 
 /*formulaire*/
@@ -51,29 +62,26 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-//apparaitre au scroll
+//section apparaitre au scroll
 
 const resume = document.getElementsByClassName("Resume");
-console.log(resume);
 
 const ratio = .4;
 const options = {
     root: null,
     rootMargin: '0px',
-    threshold: ratio   //50% de l'élément visible il déclenche
+    threshold: ratio   //40% de l'élément visible il déclenche
 }
 const handleInterset = function (entries, observer) {
-        entries.forEach(function (entry){ /*boucle sur les entry*/
+        entries.forEach(function (entry){ /*boucle sur les entries et à chaque entry*/
            if(entry.intersectionRatio > ratio){ /*si entry a un ratio plus grand que le ratio défini*/
                entry.target.classList.add('reveal-visible');
                observer.unobserve(entry.target); /*arrete d'observer l'élément actuel*/
-           } else {
-
            }
     })
 }
 const observer = new IntersectionObserver(handleInterset, options);
 document.querySelectorAll('.reveal').forEach(function (r){
-    observer.observe(r); /*boucle sur les élément et observe ceux ci un à un*/
+    observer.observe(r); /*boucle sur les éléments et observe ceux ci un à un*/
 });
 
