@@ -47,10 +47,23 @@ table {
 
 @font-face {
     font-family: "Montserrat";
-    src: url("/polices/Montserrat-Bold.otf") format("otf"),
-    url("/polices/Montserrat-Light.otf") format("otf"),
-    url("/polices/Montserrat-Regular.otf") format("otf"),
-    url("/polices/Oswald-Regular.ttf") format("ttf");
+    font-weight: 600;
+    src: url("./polices/Montserrat-Bold.otf") format("otf");
+}
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 400;
+    src:   url("./polices/Montserrat-Regular.otf") format("otf");
+}
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 200;
+    src: url("./polices/Montserrat-Light.otf") format("otf");
+}
+
+@font-face{
+    font-family: "Oswald";
+src : url("./polices/Oswald-Regular.ttf") format("ttf");
 }
 
 body > *{
@@ -59,6 +72,7 @@ body > *{
 
 body{
     font-family: "Montserrat", sans-serif;
+    font-weight: 200;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hyphens: auto;
@@ -68,7 +82,8 @@ body{
 p, li{
     line-height: 1.5em;
     color: #000000EB;
-    font-family: "Montserrat-Light";
+    font-family: "Montserrat", sans-serif;
+    font-weight: 200;
 }
 .hidden{
     visibility: hidden;
@@ -90,6 +105,7 @@ a:hover{
 
 nav{
     font-family: "Montserrat", sans-serif;
+    font-weight: 200;
     font-size: 1rem;
     padding-top: 0.5rem;
 }
@@ -101,7 +117,7 @@ nav ul{
 
 h2{
     font-family: "Montserrat", sans-serif;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 3.125em; /*(50/16)*/
     background-color:#163963;
     color: #FFFFFF;
@@ -109,15 +125,15 @@ h2{
 }
 h3{
     font-family: "Montserrat", sans-serif;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1.25em;
     color: #003668;
     line-height: 1.875rem;
     margin-left: 5%;
 }
-h4{
+h4, ul>p{
     font-family: "Montserrat", sans-serif;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 1.125em; /*(18/16)*/
     color: #7451eb;
     margin-left: 5%;
@@ -165,74 +181,8 @@ nav li:last-child input{
     transform: rotate(270deg);
 }
 
-@media screen and (max-width: 759px){
-
-    nav li {
-        padding-top: 1.5em;
-    }
-
-    /*burger menu*/
-    .burger{
-        border: none;
-        height: 30px;
-        width: 30px;
-        position: relative;
-        cursor: pointer;
-        background-color: white;
-        float: left;
-        margin-left: 15%;
-    }
-
-    .burger span{
-        height: 3px;
-        background-color: #7451eb;
-        width: 100%;
-        position: absolute;
-        top: 20px;
-        left: 0;
-    }
-
-    .burger span:before{
-        content:'';
-        height: 3px;
-        background-color: #7451eb;
-        width: 100%;
-        position: absolute;
-        top: -10px;
-        left: 0;
-    }
-    .burger span:after{
-        content:'';
-        height: 3px;
-        background-color: #7451eb;
-        width: 100%;
-        position: absolute;
-        top: 10px;
-        left: 0;
-    }
 
 
-    .topnav{
-        margin-left: -300px;
-        transition-duration: 0.2s;
-        position: absolute;
-        min-height: 100vh;
-    }
-
-    .topnav__open{
-        margin-left: 0;
-        transition-duration: 0.3s;
-        background-color: #FBFCFC;
-        margin-top: 50px;
-        width: 200px;
-        position: absolute;
-        padding: 2em;
-    }
-    .topnav input[id=search-image]{
-        margin-left: -120px;
-        margin-bottom: 15px;
-    }
-}
 
 
 
@@ -295,7 +245,7 @@ nav li:last-child input{
 .banniere p{
     color: #7451eb;
     background-color: yellow;
-    font-size: 2em;
+    font-size: 1.8em;
     text-align: center;
     padding: 0.2em;
     margin: 1em;
@@ -550,9 +500,88 @@ footer h4, footer div{
     border: 1px solid #00adef;
 }
 
+/*écran jusqu'à 759px*/
+@media screen and (max-width: 759px){
 
+    nav li {
+        padding-top: 1.5em;
+    }
 
-/*Ecran de - de 760px */
+    /*burger menu*/
+    .burger{
+        border: none;
+        height: 30px;
+        width: 30px;
+        position: relative;
+        cursor: pointer;
+        background-color: white;
+        float: left;
+        margin-left: 15%;
+    }
+
+    .burger span{
+        height: 3px;
+        background-color: #7451eb;
+        width: 100%;
+        position: absolute;
+        top: 20px;
+        left: 0;
+    }
+
+    .burger span:before{
+        content:'';
+        height: 3px;
+        background-color: #7451eb;
+        width: 100%;
+        position: absolute;
+        top: -10px;
+        left: 0;
+    }
+    .burger span:after{
+        content:'';
+        height: 3px;
+        background-color: #7451eb;
+        width: 100%;
+        position: absolute;
+        top: 10px;
+        left: 0;
+    }
+
+    .topnav{
+        margin-left: -300px;
+        transition-duration: 0.2s;
+        position: absolute;
+        min-height: 100vh;
+    }
+
+    .topnav__open{
+        margin-left: 0;
+        transition-duration: 0.3s;
+        background-color: #FBFCFC;
+        margin-top: 50px;
+        width: 200px;
+        position: absolute;
+        padding: 2em;
+    }
+    .topnav input[id=search-image]{
+        margin-left: -120px;
+        margin-bottom: 15px;
+    }
+
+    button{
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    p, .Contact li{
+        margin-left: 0.5em;
+    }
+
+    .Contact li:nth-child(2){
+        display: none;
+    }
+}
+
+/*Ecran de minimum de 760px et + */
 @media (min-width: 759px) {
     body > *{
         margin-left: 0.5em;
@@ -565,13 +594,18 @@ footer h4, footer div{
     nav ul li,.search{
         flex-direction: column;
     }
+    nav li{
+        font-size: 1em;
+    }
 
     .carousel-items {
         max-width: 28.125em; /*450/16*/
         display: flex;
         overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
         padding: 1rem 0;
         scroll-snap-type: x mandatory;
+
     }
     .carousel-item {
         margin-left: 1rem;
@@ -579,6 +613,7 @@ footer h4, footer div{
         flex-shrink: 0;
         flex-basis: 450px;
         scroll-snap-align: start;
+        -webkit-overflow-scrolling: touch
     }
     ::-webkit-scrollbar-track {
         background-color: #F5F5F5;
@@ -641,7 +676,7 @@ footer h4, footer div{
 
 
 
-/*Ecran au dessus de 1200px*/
+/*Ecran à partir de 760px*/
 
 @media (min-width: 760px){
     /*grille de base*/
@@ -765,10 +800,12 @@ div[id="FixedNav"] a{
 .cVisible{
     visibility: visible;
     transition: 5s;
+    display: initial;
 }
 
 .cInvisible{
     visibility: hidden;
+    display: none;
 }
 
 

@@ -28,6 +28,8 @@ button.addEventListener('click', (e) => {
 })
 
 
+
+
 /*formulaire*/
 
 let contactCacher = document.getElementsByClassName("cacher");
@@ -77,6 +79,9 @@ const handleInterset = function (entries, observer) {
            if(entry.intersectionRatio > ratio){ /*si entry a un ratio plus grand que le ratio défini*/
                entry.target.classList.add('reveal-visible');
                observer.unobserve(entry.target); /*arrete d'observer l'élément actuel*/
+           }
+           if(entries.className == "SavoirPlus"){
+               console.log("hello");
            }
     })
 }
