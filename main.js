@@ -25,6 +25,11 @@ let nav = document.querySelector('.topnav');
 
 button.addEventListener('click', (e) => {
     nav.classList.toggle('topnav__open');
+    if(nav.classList.contains('topnav__open')){
+        button.style.marginLeft = "300px";
+    } else {
+        button.style.marginLeft = "10%";
+    }
 })
 
 

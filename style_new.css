@@ -182,10 +182,6 @@ nav li:last-child input{
 }
 
 
-
-
-
-
 /*En tete*/
 .EnTete{
     background-color: #7451eb;
@@ -233,6 +229,7 @@ nav li:last-child input{
     max-width: 100%;
     aspect-ratio: auto 468 / 390;
     height: 390px;
+    margin-right: 1em;
 }
 
 /*banniere*/
@@ -245,10 +242,11 @@ nav li:last-child input{
 .banniere p{
     color: #7451eb;
     background-color: yellow;
-    font-size: 1.8em;
+    font-size: 1.3em;
     text-align: center;
     padding: 0.2em;
     margin: 1em;
+    font-weight: bold;
 }
 .banniere img{
     margin-right: 1em;
@@ -263,7 +261,7 @@ nav li:last-child input{
     border-radius: 10px;
     font-size: 1.2em;
     max-width: 9em;
-
+    text-transform: uppercase;
 }
 
 .banniere button:hover{
@@ -418,7 +416,6 @@ form button:hover{
 
 form input, form textarea, form label, form select{
     font-family: "Montserrat";
-    padding: 1em 0em;
     display: block;
 }
 
@@ -467,8 +464,8 @@ footer h4, footer div{
     -moz-border-radius: 50px;
     border-radius: 50px;
     padding: 0.3em;
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
 }
 .facebook:hover{
     fill: white;
@@ -500,6 +497,7 @@ footer h4, footer div{
     border: 1px solid #00adef;
 }
 
+
 /*écran jusqu'à 759px*/
 @media screen and (max-width: 759px){
 
@@ -516,7 +514,8 @@ footer h4, footer div{
         cursor: pointer;
         background-color: white;
         float: left;
-        margin-left: 15%;
+        margin-left: 10%;
+        margin-top: 0;
     }
 
     .burger span{
@@ -555,10 +554,10 @@ footer h4, footer div{
     }
 
     .topnav__open{
-        margin-left: 0;
+        margin-left: -35px;
         transition-duration: 0.3s;
         background-color: #FBFCFC;
-        margin-top: 50px;
+        /*margin-top: 50px;*/
         width: 200px;
         position: absolute;
         padding: 2em;
@@ -628,10 +627,7 @@ footer h4, footer div{
         background-color: #7451eb;
         border-radius: 3px;
     }
-    footer{
-        display: flex;
-        justify-content: space-between;
-    }
+
     .Contact{
         width: 60%;
     }
@@ -779,10 +775,17 @@ footer h4, footer div{
         padding: 0 20%;
     }
     footer{
-        padding: 0 20%;
+        padding: 0 18%;
+        display: grid;
+        grid-template-columns: 30% 40% 30%;
+        grid-gap: 15px;
+        justify-content: space-between;
+    }
+    .Reseaux{
+        display: flex;
+        flex-wrap: wrap;
     }
 }
-
 /*ancre haut de page*/
 div[id="FixedNav"]
 {
