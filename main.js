@@ -19,7 +19,7 @@ zone.addEventListener('mouseleave', (e) => {
 
 
 /*burger menu*/
-
+/*
 let button = document.querySelector('.burger');
 let nav = document.querySelector('.topnav');
 
