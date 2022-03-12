@@ -7,32 +7,14 @@ let y;
 let zone = document.querySelector('.EnTete');
 let degrade = zone.querySelector('div');
 zone.addEventListener('mousemove', (e) =>{
-    zone.x = e.pageX/2;
-    zone.y = e.pageY/2;
-    zone.style.backgroundColor = "rgb(00," + zone.x + "," + zone.y + ")";
+    zone.x = e.pageX/8;
+    zone.y = e.pageY/18;
+    zone.style.backgroundColor = "hsl("+ zone.x +"," + zone.x + "% ," + zone.y + "%)";
 })
 
 zone.addEventListener('mouseleave', (e) => {
     zone.style.backgroundColor = "#7451eb";
 })
-
-
-
-/*burger menu*/
-/*
-let button = document.querySelector('.burger');
-let nav = document.querySelector('.topnav');
-
-button.addEventListener('click', (e) => {
-    nav.classList.toggle('topnav__open');
-    if(nav.classList.contains('topnav__open')){
-        button.style.marginLeft = "300px";
-    } else {
-        button.style.marginLeft = "10%";
-    }
-})
-
-
 
 
 /*formulaire*/
