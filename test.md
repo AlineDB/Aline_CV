@@ -25,3 +25,14 @@ Check-list Qualité Web:
 - Format de fichier téléchargeable indiqué.
 - Pas de popups.
 - Navigation clavier possible.
+
+
+CSS STATS:
+- 394 total declarations, 259 have unique values. 
+- 1 fonts
+- 1 z index
+- 15 font-sizes declarations
+- 14Kb images files and 4KB Gzipped Files
+- 142 rules, 261 selectors, 394 declarations, 84 properties
+- 0 ID, 100 class, 19 pseudo-class and 8 pseudo-elements
+
