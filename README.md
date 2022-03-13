@@ -2,6 +2,10 @@
 
 Ici vous trouverez les fichiers concernant le projet CV dans le cadre du cours de Design Web.
 
+Le site est en ligne [Aline](https://aline-db.be/).
+
+Les différents tests réalisés sur ma page se trouve [ICI]().
+
 Le site choisi comme modèle est [Openclassrooms](https://openclassrooms.com/fr/).
 
 Vous trouverez celui-ci sous forme de pdf dans le dossier sous le nom [exemple site openclassrooms 2](https://github.com/AlineDB/Aline_CV/blob/main/exemple%20site%20openclassroom2.pdf).
