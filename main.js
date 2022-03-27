@@ -12,6 +12,7 @@ zone.addEventListener('mousemove', (e) =>{
     zone.style.backgroundColor = "hsl("+ zone.x +"," + zone.x + "% ," + zone.y + "%)";
 })
 
+
 zone.addEventListener('mouseleave', (e) => {
     zone.style.backgroundColor = "#7451eb";
 })
