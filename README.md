@@ -17,3 +17,17 @@ Vous pouvez voir la maquette réalisée sous Adobe XD via [ce lien](https://xd.a
 Il existe deux version css : le style-new effectué avec HTML5 (grid-layout et flexbox) et le style-old (sans grid-layout).
 
 Ce dossier sera régulièrement mis à jour afin d'être présenté au jury lors des examens de juin 2022.
+
+# Tests
+
+GTMETRIX -> Grade A, 91% de performance et 94% structure. Avertissement sur le cache.
+
+W3C HTML -> 10 avertissements sur une déclaration de rôle non nécessaire (nav, heading).
+
+W3C CSS -> Validé niveau 3 + SVG
+
+W3C Links -> 2 liens bloquent les robots. Le lien amazon n'a pas pu être vérifié. Un avertissement sur les liens portfolio et antilope auxquels il manque le slash de fin.
+Validation des 14 ancres.
+
+Accessibilité via Wave -> label manquant pour un input (pas utilisé). Une alerte sur des fieldset legend manquant dans le formulaire.
+Contraste ok, structure ok, chaque image à un alt.

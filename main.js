@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+
 //section apparaitre au scroll
 
 const resume = document.getElementsByClassName("Resume");
