@@ -68,7 +68,7 @@ const handleInterset = function (entries, observer) {
                entry.target.classList.add('reveal-visible');
                observer.unobserve(entry.target); /*arrete d'observer l'élément actuel*/
            }
-           if(entries.className == "SavoirPlus"){
+           if(entries.className === "SavoirPlus"){
                console.log("hello");
            }
     })
