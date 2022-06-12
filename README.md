@@ -31,3 +31,4 @@ Validation des 14 ancres.
 
 Accessibilité via Wave -> label manquant pour un input (pas utilisé). Une alerte sur des fieldset legend manquant dans le formulaire.
 Contraste ok, structure ok, chaque image à un alt.
+
